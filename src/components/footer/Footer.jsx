@@ -23,9 +23,7 @@ export default function Footer() {
                 <FiMapPin size={19} className="mt-1 shrink-0 text-[#D4A72C]" />
 
                 <p className="leading-6">
-                  شهرک صنعتی، جاده مخصوص،
-                  <br />
-                  بامیکا نیرو
+                  سرک کابل قندهار نارسیده به قلعه حیدر خان
                 </p>
               </div>
 
@@ -33,14 +31,34 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <FiPhone size={18} className="shrink-0 text-[#D4A72C]" />
 
-                <p dir="ltr">021-12345678</p>
+                <p dir="ltr">
+                  {" "}
+                  <a
+                    href="tel:0777841099"
+                    className="transition-colors hover:text-[#D4A72C] mr-3"
+                  >
+                    0777841099
+                  </a>
+                  <a
+                    href="tel:0796685153"
+                    className="transition-colors hover:text-[#D4A72C]"
+                  >
+                    0796685153
+                  </a>
+                </p>
               </div>
 
               {/* Email */}
               <div className="flex items-center gap-3">
                 <FiMail size={18} className="shrink-0 text-[#D4A72C]" />
 
-                <p dir="ltr">info@bamikanero.com</p>
+                <a
+                  href="mailto:ziayeeniquly@gmail.com"
+                  dir="ltr"
+                  className="break-all transition-colors hover:text-[#D4A72C]"
+                >
+                  ziayeeniquly@gmail.com
+                </a>
               </div>
 
               {/* Working Hours */}

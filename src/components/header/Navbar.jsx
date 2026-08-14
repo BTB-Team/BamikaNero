@@ -14,7 +14,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-50 w-full bg-[#050505] text-white">
+    <header className=" sticky top-0 left-0 z-50 w-full md:border-b   text-[#050505]  bg-white">
       <nav
         dir="rtl"
         className="mx-auto flex h-[70px] w-full max-w-[1440px] items-center justify-between px-5 lg:px-8"
@@ -32,7 +32,7 @@ const NavBar = () => {
           <div className="text-right leading-tight">
             <h1 className="text-[18px] font-bold text-white">بامیکا نیرو</h1>
 
-            <p className="text-[8px] font-medium text-gray-400">
+            <p className="text-[8px] font-medium text-gray-500">
               شرکت ریخته گری بامیکا نیرو
             </p>
 
@@ -52,7 +52,7 @@ const NavBar = () => {
                 `relative py-6 text-[14px] font-medium transition-colors duration-200 ${
                   isActive
                     ? "text-[#D4A72C]"
-                    : "text-white hover:text-[#D4A72C]"
+                    : "text-black hover:text-[#D4A72C]"
                 }`
               }
             >
@@ -83,7 +83,7 @@ const NavBar = () => {
         <button
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex h-10 w-10 items-center justify-center text-white transition-colors hover:text-[#D4A72C] md:hidden"
+          className="flex h-10 w-10 items-center justify-center text-black transition-colors hover:text-[#D4A72C] md:hidden"
           aria-label="باز کردن منو"
         >
           {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -94,7 +94,7 @@ const NavBar = () => {
       {isMenuOpen && (
         <div
           dir="rtl"
-          className="border-t border-[#252525] bg-[#050505] px-5 pb-5 md:hidden"
+          className="border-t  text-[#050505] bg-white px-5 pb-5 md:hidden"
         >
           <div className="flex flex-col">
             {navItems.map((item) => (
@@ -103,10 +103,10 @@ const NavBar = () => {
                 to={item.path}
                 onClick={() => setIsMenuOpen(false)}
                 className={({isActive}) =>
-                  `border-b border-[#222] py-4 text-sm font-medium transition-colors ${
+                  `border-b  py-4 text-sm font-medium transition-colors ${
                     isActive
                       ? "text-[#D4A72C]"
-                      : "text-white hover:text-[#D4A72C]"
+                      : "text-[#050505] hover:text-[#D4A72C]"
                   }`
                 }
               >
