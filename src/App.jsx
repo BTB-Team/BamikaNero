@@ -7,7 +7,7 @@ import Project from "./pages/project/Project";
 import Services from "./pages/services/Services";
 import ServiceDetail from "./pages/services/ServiceDetail";
 import ProjectDetail from "./pages/project/ProjectDetail";
-
+import Gallery from "./pages/gallery/Gallery";
 function App() {
   return (
     <HashRouter>
@@ -20,6 +20,7 @@ function App() {
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Route>
       </Routes>
     </HashRouter>

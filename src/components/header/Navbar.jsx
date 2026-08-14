@@ -5,9 +5,11 @@ import Logo from "../../assets/logo.jpg";
 
 const navItems = [
   {title: "صفحه اصلی", path: "/"},
-  {title: "درباره ما", path: "/about"},
   {title: "خدمات", path: "/services"},
   {title: "پروژه ها", path: "/project"},
+  {title: "درباره شرکت", path: "/about"},
+  {title: "گالری", path: "/gallery"},
+  {title: "سوالات متداول", path: "/?to=faq-section"},
 ];
 
 const NavBar = () => {
