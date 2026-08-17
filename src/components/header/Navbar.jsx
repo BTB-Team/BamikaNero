@@ -16,7 +16,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className=" sticky font-yekan top-0  left-0 z-50 w-full md:border-b   text-[#050505]  bg-white">
+    <header className=" sticky font-yekan top-0  left-0 z-50 w-full md:border-b   text-bamikaBlak  bg-white">
       <nav
         dir="rtl"
         className="mx-auto flex h-[70px] w-full max-w-[1440px] items-center justify-between px-5 lg:px-8"
@@ -53,8 +53,8 @@ const NavBar = () => {
               className={({isActive}) =>
                 `relative py-6 text-[14px] font-medium transition-colors duration-200 ${
                   isActive
-                    ? "text-[#D4A72C]"
-                    : "text-black hover:text-[#D4A72C]"
+                    ? "text-bamikaGold"
+                    : "text-bamikaBlack hover:text-bamikaGold"
                 }`
               }
             >
