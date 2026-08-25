@@ -177,7 +177,7 @@ export default function Portfolio() {
             w-full
             object-cover
             object-center
-            opacity-80
+          
           "
         />
       </div>
