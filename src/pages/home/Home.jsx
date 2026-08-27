@@ -1,21 +1,21 @@
 import Banner from "../home/Banner";
-// import About from "../components/About";
-// import Services from "../components/Services";
-// import Projects from "../components/Projects";
-// import Stats from "../components/Stats";
-// import Values from "../components/Values";
-// import CTA from "../components/CTA";
+import About from "../home/About";
+import Services from "../home/services";
+import Projects from "../home/Projects";
+import Stats from "../home/Stats";
+// import Values from "../home/Values";
+import CTA from "../home/CTA";
 
 export default function Home() {
   return (
     <main>
       <Banner />
-      {/* <About />
+      <About />
       <Services />
       <Projects />
       <Stats />
-      <Values />
-      <CTA /> */}
+      {/* <Values /> */}
+      <CTA />
     </main>
   );
 }

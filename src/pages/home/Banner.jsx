@@ -16,7 +16,10 @@ import bannerImage3 from "../../assets/images/banner-image03.jpg";
 const slides = [
   {
     image: bannerImage1,
-    badge: { icon: HiOutlineCog, text: "تخصص ما، کیفیت ماندگار شما" },
+    badge: {
+      icon: HiOutlineCog,
+      text: "تخصص ما، کیفیت ماندگار شما",
+    },
     heading: [
       { text: "کیفیت در ریخته‌گری", dark: true },
       { text: "قدرت در صنعت", gold: true },
@@ -27,11 +30,18 @@ const slides = [
       icon: MdOutlineCandlestickChart,
       href: "/quote",
     },
-    btnSecondary: { label: "مشاهده پروژه‌ها", href: "/projects" },
+    btnSecondary: {
+      label: "مشاهده پروژه‌ها",
+      href: "/projects",
+    },
   },
+
   {
     image: bannerImage2,
-    badge: { icon: HiUserGroup, text: "بیش از ۲۰۰ نفر اشتغال زایی" },
+    badge: {
+      icon: HiUserGroup,
+      text: "بیش از ۲۰۰ نفر اشتغال زایی",
+    },
     heading: [
       { text: "خودکفایی در تولید", dark: true },
       { text: "رشد اقتصاد افغانستان", gold: true },
@@ -42,11 +52,18 @@ const slides = [
       icon: MdOutlineCandlestickChart,
       href: "/quote",
     },
-    btnSecondary: { label: "درباره ما", href: "/about" },
+    btnSecondary: {
+      label: "درباره ما",
+      href: "/about",
+    },
   },
+
   {
     image: bannerImage3,
-    badge: { icon: HiGlobe, text: "استانداردهای بین‌المللی" },
+    badge: {
+      icon: HiGlobe,
+      text: "استانداردهای بین‌المللی",
+    },
     heading: [
       { text: "قطعات چدنی، آهنی", dark: true },
       { text: "و آلومینیومی", gold: true },
@@ -57,7 +74,10 @@ const slides = [
       icon: MdOutlineCandlestickChart,
       href: "/quote",
     },
-    btnSecondary: { label: "تماس با ما", href: "/contact" },
+    btnSecondary: {
+      label: "تماس با ما",
+      href: "/contact",
+    },
   },
 ];
 
@@ -66,10 +86,12 @@ const slideVariants = {
     x: direction > 0 ? -80 : 80,
     opacity: 0,
   }),
+
   center: {
     x: 0,
     opacity: 1,
   },
+
   exit: (direction) => ({
     x: direction > 0 ? 80 : -80,
     opacity: 0,
@@ -103,12 +125,16 @@ export default function Banner() {
 
   useEffect(() => {
     if (isPaused) return;
+
     const timer = setInterval(goNext, 5000);
+
     return () => clearInterval(timer);
   }, [goNext, isPaused]);
 
   const slide = slides[current];
+
   const BadgeIcon = slide.badge.icon;
+  const PrimaryIcon = slide.btnPrimary.icon;
 
   return (
     <section
@@ -116,8 +142,10 @@ export default function Banner() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Left: Image Side */}
-      <div className="hidden lg:block lg:w-3/5 xl:w-[62%] relative">
+      {/* =========================================================
+          IMAGE SIDE
+          ========================================================= */}
+      <div className="hidden lg:block lg:w-3/5 xl:w-[62%] relative overflow-visible">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={current}
@@ -126,59 +154,135 @@ export default function Banner() {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute inset-0"
-            style={{
-              clipPath:
-                "polygon(0 0, 68.17% 0.32%, 82.30% 8.18%, 91.20% 12.79%, 96.44% 16.66%, 98.53% 19.53%, 98.53% 23.77%, 91.20% 30.62%, 0.89% 99.58%, 0 100%)",
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
             }}
+            className="absolute inset-0"
           >
-            <img
-              src={slide.image}
-              alt="بامیکا نیرو"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
+            {/* =====================================================
+                IMAGE + GOLD BORDER
+                ===================================================== */}
+            <svg
+              className="absolute inset-0 w-full h-full overflow-visible"
+              viewBox="0 0 1000 1000"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <clipPath id={`bannerClip-${current}`}>
+                  <path
+                    d="
+                      M 0 0
+                      H 675
+
+                      C 710 18 750 42 790 68
+                      C 825 90 860 112 895 134
+                      C 930 156 965 180 988 210
+
+                      C 997 222 1000 238 1000 252
+                      L 1000 282
+
+                      C 1000 295 994 306 984 316
+
+                      C 950 347 915 376 880 404
+
+                      L 82 1000
+
+                      H 0
+                      Z
+                    "
+                  />
+                </clipPath>
+              </defs>
+
+              {/* IMAGE */}
+              <image
+                href={slide.image}
+                x="0"
+                y="0"
+                width="1000"
+                height="1000"
+                preserveAspectRatio="xMidYMid slice"
+                clipPath={`url(#bannerClip-${current})`}
+              />
+
+              {/* IMAGE OVERLAY */}
+              <path
+                d="
+                  M 0 0
+                  H 675
+
+                  C 710 18 750 42 790 68
+                  C 825 90 860 112 895 134
+                  C 930 156 965 180 988 210
+
+                  C 997 222 1000 238 1000 252
+                  L 1000 282
+
+                  C 1000 295 994 306 984 316
+
+                  C 950 347 915 376 880 404
+
+                  L 82 1000
+
+                  H 0
+                  Z
+                "
+                fill="rgba(0,0,0,0.08)"
+              />
+
+              {/* =================================================
+                  GOLD BORDER
+                  ================================================= */}
+              <path
+                d="
+                  M 675 0
+
+                  C 710 18 750 42 790 68
+                  C 825 90 860 112 895 134
+                  C 930 156 965 180 988 210
+
+                  C 997 222 1000 238 1000 252
+                  L 1000 282
+
+                  C 1000 295 994 306 984 316
+
+                  C 950 347 915 376 880 404
+
+                  L 82 1000
+                "
+                fill="none"
+                stroke="#D8A21B"
+                strokeWidth="16"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+
+              {/* TEAL ACCENT */}
+              <path
+                d="
+                  M 99 1000
+                  L 455 735
+                "
+                fill="none"
+                stroke="#004545"
+                strokeWidth="16"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </motion.div>
         </AnimatePresence>
-
-        <svg
-          className="absolute inset-0 pointer-events-none z-10"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M 68.17,0.32
-       C 70.53,1.63 78.46,6.10 82.30,8.18
-       C 86.14,10.26 88.84,11.38 91.20,12.79
-       C 93.56,14.20 95.22,15.54 96.44,16.66
-       C 97.66,17.78 98.18,18.35 98.53,19.53
-       C 98.88,20.71 99.75,21.92 98.53,23.77
-       C 97.31,25.62 92.42,29.48 91.20,30.62
-       L 0.89,99.58"
-            fill="none"
-            stroke="#D4A72C"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            vectorEffect="non-scaling-stroke"
-          />
-          <path
-            d="M 40.85,54.88
-       Q 33.5,73.5 29.51,83.99
-       Q 28.2,89.5 27.48,96.12"
-            fill="none"
-            stroke="#15473F"
-            strokeWidth="9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
       </div>
 
-      {/* Right: Content Side */}
+      {/* =========================================================
+          RIGHT / CONTENT SIDE
+          ========================================================= */}
       <div className="w-full lg:w-2/5 xl:w-[38%] flex items-center justify-center px-6 sm:px-10 lg:px-12 xl:px-16 relative">
+        {/* =====================================================
+            MOBILE BACKGROUND
+            ===================================================== */}
         <div className="lg:hidden absolute inset-0">
           <AnimatePresence mode="wait">
             <motion.img
@@ -192,34 +296,59 @@ export default function Banner() {
               className="w-full h-full object-cover"
             />
           </AnimatePresence>
+
           <div className="absolute inset-0 bg-[#F7F1E6]/95" />
         </div>
 
-        {/* Decorative dot-grid accent, top-right of the content side */}
+        {/* =====================================================
+            DECORATIVE DOT GRID
+            ===================================================== */}
         <div className="hidden lg:grid absolute top-8 right-6 xl:right-10 grid-cols-4 gap-1.5 z-0 pointer-events-none">
           {Array.from({ length: 16 }).map((_, i) => (
             <span key={i} className="w-1.5 h-1.5 rounded-full bg-gray-300/70" />
           ))}
         </div>
 
+        {/* =====================================================
+            CONTENT
+            ===================================================== */}
         <div className="relative z-10 py-20 lg:py-0 max-w-lg w-full">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={current}
               custom={direction}
-              initial={{ x: direction > 0 ? 40 : -40, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: direction > 0 ? -40 : 40, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              initial={{
+                x: direction > 0 ? 40 : -40,
+                opacity: 0,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+              }}
+              exit={{
+                x: direction > 0 ? -40 : 40,
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
             >
+              {/* =================================================
+                  BADGE
+                  ================================================= */}
               <div className="inline-flex items-center gap-2 mb-8">
                 <BadgeIcon className="text-bamikaGold" size={18} />
+
                 <span className="text-gray-700 text-xs font-medium tracking-wide">
                   {slide.badge.text}
                 </span>
               </div>
 
-              <h1 className="font-Estedad font-black text-3xl sm:text-4xl lg:text-[2.8rem] xl:text-[3.2rem] leading-[1.55] mb-6">
+              {/* =================================================
+                  HEADING
+                  ================================================= */}
+              <h1 className="font-Estedad font-black text-3xl sm:text-4xl lg:text-[2.8rem] xl:text-[3.2rem] leading-[1.8] mb-6 md:text-5xl lg:leading-[1.6] xl:leading-[1.4]">
                 {slide.heading
                   .map((line, i) =>
                     line.dark ? (
@@ -233,28 +362,42 @@ export default function Banner() {
                     ),
                   )
                   .reduce((acc, el, i) => {
-                    if (i === slide.heading.length - 1) return [...acc, el];
+                    if (i === slide.heading.length - 1) {
+                      return [...acc, el];
+                    }
+
                     return [...acc, el, <br key={`br-${i}`} />];
                   }, [])}
               </h1>
 
+              {/* =================================================
+                  DESCRIPTION
+                  ================================================= */}
               <p className="text-gray-600 text-sm sm:text-base leading-7 mb-10 max-w-md">
                 {slide.desc}
               </p>
 
+              {/* =================================================
+                  BUTTONS
+                  ================================================= */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                {/* PRIMARY BUTTON */}
                 <a
                   href={slide.btnPrimary.href}
                   className="group flex items-center justify-center gap-2 px-7 py-3.5 bg-bamikaGold text-white font-bold text-sm rounded-lg hover:bg-bamikaGold/90 transition-all duration-300 hover:shadow-lg hover:shadow-bamikaGold/20"
                 >
                   {slide.btnPrimary.label}
-                  <slide.btnPrimary.icon size={18} />
+
+                  <PrimaryIcon size={18} />
                 </a>
+
+                {/* SECONDARY BUTTON */}
                 <a
                   href={slide.btnSecondary.href}
                   className="group flex items-center justify-center gap-2 px-7 py-3.5 bg-[#15473F] text-white font-medium text-sm rounded-lg hover:bg-[#0f3630] transition-all duration-300"
                 >
                   {slide.btnSecondary.label}
+
                   <HiArrowLeft
                     size={18}
                     className="transition-transform duration-300 group-hover:-translate-x-1"
@@ -266,7 +409,9 @@ export default function Banner() {
         </div>
       </div>
 
-      {/* Edge arrow controls — vertically centered on the outer left/right edges */}
+      {/* =========================================================
+          DESKTOP ARROW CONTROLS
+          ========================================================= */}
       <button
         onClick={goPrev}
         aria-label="اسلاید قبلی"
@@ -274,6 +419,7 @@ export default function Banner() {
       >
         <HiArrowLeft size={18} />
       </button>
+
       <button
         onClick={goNext}
         aria-label="اسلاید بعدی"
@@ -282,7 +428,9 @@ export default function Banner() {
         <HiArrowRight size={18} />
       </button>
 
-      {/* Indicator dots — fixed brand colors (gold / teal / gray), active one highlighted */}
+      {/* =========================================================
+          DESKTOP INDICATOR DOTS
+          ========================================================= */}
       <div className="hidden lg:flex absolute bottom-16 left-[45%] -translate-x-1/2 items-center gap-2 z-20">
         <button
           onClick={() => goTo(0)}
@@ -293,6 +441,7 @@ export default function Banner() {
               : "bg-bamikaGold/40"
           }`}
         />
+
         <button
           onClick={() => goTo(1)}
           aria-label="اسلاید ۲"
@@ -302,6 +451,7 @@ export default function Banner() {
               : "bg-[#15473F]/40"
           }`}
         />
+
         <button
           onClick={() => goTo(2)}
           aria-label="اسلاید ۳"
@@ -313,7 +463,9 @@ export default function Banner() {
         />
       </div>
 
-      {/* Mobile Carousel Controls */}
+      {/* =========================================================
+          MOBILE CONTROLS
+          ========================================================= */}
       <div className="lg:hidden absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
         <button
           onClick={goPrev}
@@ -321,17 +473,20 @@ export default function Banner() {
         >
           <HiArrowRight size={14} />
         </button>
+
         <div className="flex items-center gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
+              aria-label={`اسلاید ${i + 1}`}
               className={`rounded-full transition-all duration-300 ${
                 i === current ? "w-7 h-2 bg-bamikaGold" : "w-2 h-2 bg-gray-300"
               }`}
             />
           ))}
         </div>
+
         <button
           onClick={goNext}
           className="w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-bamikaGold hover:text-bamikaGold transition-all"
