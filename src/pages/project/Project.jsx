@@ -16,128 +16,135 @@ export default function Portfolio() {
       {/* 
           HERO
        */}
-      <section
-        className="relative w-full overflow-hidden bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${Bg})`,
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-white/60" />
+     <section
+  className="relative w-full overflow-hidden bg-cover bg-center"
+  style={{
+    backgroundImage: `url(${Bg})`,
+  }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-white/60" />
 
-        <div className="relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-12">
-          <div
+  <div className="relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-12">
+    <div
+      className="
+        grid
+        min-h-[330px]
+        grid-cols-1
+        items-center
+        sm:min-h-[230px]
+        lg:h-[240px]
+        lg:min-h-0
+        lg:grid-cols-2
+      "
+    >
+      {/* HERO TEXT */}
+      <div
+        className="
+          order-2
+          mr-0
+          py-4
+          text-right
+          sm:mr-20
+          lg:order-1
+          lg:py-6
+        "
+      >
+        <h1
+          className="
+            font-Estedad
+            text-[30px]
+            font-bold
+            leading-[1.5]
+            text-bamikaBlack
+            sm:text-[38px]
+            lg:text-[46px]
+          "
+        >
+          پروژه‌های <span className="text-bamikaGold">ما</span>
+        </h1>
+
+        <p
+          className="
+            mt-3
+            max-w-[380px]
+            font-yekan
+            text-[15px]
+            leading-[2.1]
+            text-[#777777]
+            sm:mt-4
+            sm:text-[14px]
+            lg:text-[15px]
+          "
+        >
+          نمونه‌ای از پروژه‌های موفق اجرا شده توسط شرکت فراز صنعت در زمینه
+          طراحی، ساخت و نصب سازه‌های صنعتی
+        </p>
+
+        <div className="mt-4 flex items-center gap-3">
+          <Link
+            to="/"
             className="
-              grid
-              min-h-[330px]
-              grid-cols-1
-              items-center
-              sm:min-h-[230px]
-              lg:h-[240px]
-              lg:min-h-0
-              lg:grid-cols-2
+              font-yekan
+              text-[14px]
+              font-bold
+              text-black
+              transition-colors
+              duration-300
+              hover:text-bamikaGold
             "
           >
-            {/* HERO TEXT */}
-            <div
-              className="
-                mr-0
-                py-4
-                text-right
-                sm:mr-20
-                lg:py-6
-              "
-            >
-              <h1
-                className="
-                  font-Estedad
-                  text-[30px]
-                  font-bold
-                  leading-[1.5]
-                  text-bamikaBlack
-                  sm:text-[38px]
-                  lg:text-[46px]
-                "
-              >
-                پروژه‌های <span className="text-bamikaGold">ما</span>
-              </h1>
+            خانه
+          </Link>
 
-              <p
-                className="
-                  mt-3
-                  max-w-[380px]
-                  font-yekan
-                  text-[15px]
-                  leading-[2.1]
-                  text-[#777777]
-                  sm:mt-4
-                  sm:text-[14px]
-                  lg:text-[15px]
-                "
-              >
-                نمونه‌ای از پروژه‌های موفق اجرا شده توسط شرکت فراز صنعت در زمینه
-                طراحی، ساخت و نصب سازه‌های صنعتی
-              </p>
+          <FiChevronRight
+            size={14}
+            strokeWidth={2}
+            className="text-black"
+          />
 
-             
-              <div className="mt-4 flex items-center gap-3">
-                <Link
-                  to="/"
-                  className="
-                    font-yekan
-                    text-[14px]
-                    font-bold
-                    transition-colors
-                    duration-300
-                    hover:text-bamikaGold
-                  "
-                >
-                  خانه
-                </Link>
-
-                <FiChevronRight size={14} strokeWidth={2} />
-
-                <Link
-                  to="/project"
-                  className="
-                    font-yekan
-                    text-[14px]
-                    font-bold
-                    text-bamikaGold
-                    transition-colors
-                    duration-300
-                  "
-                >
-                  پروژه‌ها
-                </Link>
-              </div>
-            </div>
-
-            {/* HERO IMAGE */}
-            <div
-              className="
-                relative
-                hidden
-                lg:block
-                lg:h-[240px]
-                lg:-ml-12
-                lg:mr-0
-              "
-            >
-              <img
-                src={img04}
-                alt="Industrial Project"
-                className="
-                  h-full
-                  w-full
-                  object-cover
-                  object-center
-                "
-              />
-            </div>
-          </div>
+          <Link
+            to="/project"
+            className="
+              font-yekan
+              text-[14px]
+              font-bold
+              text-bamikaGold
+              transition-colors
+              duration-300
+            "
+          >
+            پروژه‌ها
+          </Link>
         </div>
-      </section>
+      </div>
+
+      {/* HERO IMAGE */}
+      <div
+        className="
+          relative
+          order-1
+          lg:order-2
+          lg:block
+          lg:h-[240px]
+          lg:-ml-12
+          lg:mr-0
+        "
+      >
+        <img
+          src={img04}
+          alt="Industrial Project"
+          className="
+            h-full
+            w-full
+            object-cover
+            object-center
+          "
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/*  PROJECT NOT FOUND */}
       <section
