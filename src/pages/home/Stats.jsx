@@ -48,7 +48,7 @@ function FadeIn({ children, delay = 0, className = "" }) {
 
 export default function Stats() {
   return (
-    <section dir="rtl" className="w-full bg-[#013636] py-14 sm:py-16 lg:py-20">
+    <section dir="rtl" className=" w-full bg-[#013636] py-14 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, index) => {
@@ -56,7 +56,7 @@ export default function Stats() {
 
             return (
               <FadeIn key={index} delay={index * 0.1}>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 lg:gap-6 xl:gap-8 p-4 sm:p-5 lg:p-6 rounded-lg bg-[#004545]/10">
                   {/* Icon */}
                   <div
                     className="

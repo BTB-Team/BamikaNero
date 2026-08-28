@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { HiChevronDown, HiPhone } from "react-icons/hi";
 
-// TODO: save the conference-room photo you uploaded into your assets
-// folder (matching the same path your banner images use) and point
-// this import at it.
 import ctaBg from "../../assets/images/collabrate.png";
 
 const faqs = [
@@ -51,20 +48,18 @@ export default function CTA() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section dir="rtl" className="w-full bg-[#F7F1E6] py-20 lg:py-28">
+    <section id="faq-section" dir="rtl" className="w-full bg-white py-14 lg:py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="flex flex-col lg:flex-row-reverse items-stretch gap-6 lg:gap-8">
-          {/* =====================================================
-              LEFT: FAQ accordion
-              ===================================================== */}
+          {/* FAQ */}
           <div className="w-full lg:w-1/2 bg-white border border-[#E7E7E7] rounded-2xl p-8 sm:p-10 lg:p-12">
             <FadeIn>
-              <h2 className="font-Estedad font-black text-[24px] sm:text-[28px] text-[#1E1E1E] leading-[1.7] mb-8">
+              <h2 className="font-Estedad font-black text-[24px] sm:text-[28px] text-[#1E1E1E] leading-[1.7] mb-6">
                 سوالات <span className="text-bamikaGold">متداول</span>
               </h2>
             </FadeIn>
 
-            <div className="space-y-1">
+            <div className="space-y-0">
               {faqs.map((item, index) => {
                 const isOpen = openIndex === index;
                 return (
@@ -72,13 +67,13 @@ export default function CTA() {
                     <div className="border-b border-[#EFEFEF] last:border-none">
                       <button
                         onClick={() => setOpenIndex(isOpen ? null : index)}
-                        className="w-full flex items-center justify-between gap-3 px-5 py-4 text-right"
+                        className="w-full flex items-center justify-between gap-3 px-4 py-3 text-right"
                       >
-                        <span className="font-yekan text-[15px] text-[#333]">
+                        <span className="font-yekan text-[14px] text-[#333]">
                           {item.question}
                         </span>
                         <HiChevronDown
-                          size={18}
+                          size={16}
                           className={`shrink-0 text-bamikaGold transition-transform duration-300 ${
                             isOpen ? "rotate-180" : ""
                           }`}
@@ -94,7 +89,7 @@ export default function CTA() {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="overflow-hidden"
                           >
-                            <p className="font-yekan text-[13px] text-[#666] leading-7 px-5 pb-4">
+                            <p className="font-yekan text-[13px] text-[#666] leading-6 px-4 pb-3">
                               {item.answer}
                             </p>
                           </motion.div>
@@ -107,10 +102,7 @@ export default function CTA() {
             </div>
           </div>
 
-          {/* =====================================================
-              RIGHT: Gold CTA box, with the conference-room photo
-              as a background and a gold tint over it
-              ===================================================== */}
+          {/* CTA Box */}
           <div className="relative w-full lg:w-1/2 rounded-2xl overflow-hidden flex flex-col justify-center p-8 sm:p-10 lg:p-12">
             <img
               src={ctaBg}

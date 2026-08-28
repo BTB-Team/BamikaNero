@@ -74,7 +74,7 @@ export default function Projects() {
   const goPrev = () => setStart((prev) => Math.max(prev - 1, 0));
 
   return (
-    <section className="w-full bg-[#F7F1E6] py-20 lg:py-28">
+    <section className="w-full bg-white py-14 lg:py-14">
       <div className="mx-auto max-w-[1160px] px-5 sm:px-8">
         {/* Section Header */}
         <FadeIn className="mb-14 flex flex-col items-center text-center">
