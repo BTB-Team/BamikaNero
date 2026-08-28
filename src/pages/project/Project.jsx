@@ -16,18 +16,18 @@ export default function Portfolio() {
       {/* 
           HERO
        */}
-     <section
-  className="relative w-full overflow-hidden bg-cover bg-center"
-  style={{
-    backgroundImage: `url(${Bg})`,
-  }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-white/60" />
+      <section
+        className="relative w-full overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${Bg})`,
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-white/60" />
 
-  <div className="relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-12">
-    <div
-      className="
+        <div className="relative z-10 mx-auto w-full px-5 sm:px-8 lg:px-12">
+          <div
+            className="
         grid
         min-h-[330px]
         grid-cols-1
@@ -37,10 +37,10 @@ export default function Portfolio() {
         lg:min-h-0
         lg:grid-cols-2
       "
-    >
-      {/* HERO TEXT */}
-      <div
-        className="
+          >
+            {/* HERO TEXT */}
+            <div
+              className="
           order-2
           mr-0
           py-4
@@ -49,9 +49,9 @@ export default function Portfolio() {
           lg:order-1
           lg:py-6
         "
-      >
-        <h1
-          className="
+            >
+              <h1
+                className="
             font-Estedad
             text-[30px]
             font-bold
@@ -60,12 +60,12 @@ export default function Portfolio() {
             sm:text-[38px]
             lg:text-[46px]
           "
-        >
-          پروژه‌های <span className="text-bamikaGold">ما</span>
-        </h1>
+              >
+                پروژه‌های <span className="text-bamikaGold">ما</span>
+              </h1>
 
-        <p
-          className="
+              <p
+                className="
             mt-3
             max-w-[380px]
             font-yekan
@@ -76,15 +76,15 @@ export default function Portfolio() {
             sm:text-[14px]
             lg:text-[15px]
           "
-        >
-          نمونه‌ای از پروژه‌های موفق اجرا شده توسط شرکت فراز صنعت در زمینه
-          طراحی، ساخت و نصب سازه‌های صنعتی
-        </p>
+              >
+                نمونه‌ای از پروژه‌های موفق اجرا شده توسط شرکت فراز صنعت در زمینه
+                طراحی، ساخت و نصب سازه‌های صنعتی
+              </p>
 
-        <div className="mt-4 flex items-center gap-3">
-          <Link
-            to="/"
-            className="
+              <div className="mt-4 flex items-center gap-3">
+                <Link
+                  to="/"
+                  className="
               font-yekan
               text-[14px]
               font-bold
@@ -93,19 +93,19 @@ export default function Portfolio() {
               duration-300
               hover:text-bamikaGold
             "
-          >
-            خانه
-          </Link>
+                >
+                  خانه
+                </Link>
 
-          <FiChevronRight
-            size={14}
-            strokeWidth={2}
-            className="text-black"
-          />
+                <FiChevronRight
+                  size={14}
+                  strokeWidth={2}
+                  className="text-black"
+                />
 
-          <Link
-            to="/project"
-            className="
+                <Link
+                  to="/project"
+                  className="
               font-yekan
               text-[14px]
               font-bold
@@ -113,15 +113,15 @@ export default function Portfolio() {
               transition-colors
               duration-300
             "
-          >
-            پروژه‌ها
-          </Link>
-        </div>
-      </div>
+                >
+                  پروژه‌ها
+                </Link>
+              </div>
+            </div>
 
-      {/* HERO IMAGE */}
-      <div
-        className="
+            {/* HERO IMAGE */}
+            <div
+              className="
           relative
           order-1
           lg:order-2
@@ -130,21 +130,21 @@ export default function Portfolio() {
           lg:-ml-12
           lg:mr-0
         "
-      >
-        <img
-          src={img04}
-          alt="Industrial Project"
-          className="
+            >
+              <img
+                src={img04}
+                alt="Industrial Project"
+                className="
             h-full
             w-full
             object-cover
             object-center
           "
-        />
-      </div>
-    </div>
-  </div>
-</section>
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/*  PROJECT NOT FOUND */}
       <section
