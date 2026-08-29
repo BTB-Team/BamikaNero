@@ -48,7 +48,11 @@ export default function CTA() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section id="faq-section" dir="rtl" className="w-full bg-white py-14 lg:py-16">
+    <section
+      id="faq-section"
+      dir="rtl"
+      className="scroll-mt-[100px] w-full bg-white py-14 lg:py-16"
+    >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="flex flex-col lg:flex-row-reverse items-stretch gap-6 lg:gap-8">
           {/* FAQ */}
