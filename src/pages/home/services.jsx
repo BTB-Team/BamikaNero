@@ -62,7 +62,7 @@ export default function Services() {
   return (
     <section
       dir="rtl"
-      className="relative w-full overflow-hidden bg-[#F7F1E6] py-20 lg:py-28"
+      className="relative w-full overflow-hidden bg-white py-14 lg:py-6"
     >
       {/* Background Gear Decorations */}
       <div className="absolute top-10 right-[-20px] pointer-events-none opacity-[0.04]">
